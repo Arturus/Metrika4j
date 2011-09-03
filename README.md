@@ -8,12 +8,15 @@ Java идиомы и не вникая в низкоуровневые дета�
 - JDK 5.0 и выше
 - Android API Level 3 и выше
 
+
 Зависимости: нет
+
 
 Необязательные зависимости (библиотеки для работы с JSON):
 
 - [Jackson](http://jackson.codehaus.org) JSON processor 1.8 и выше
 - [org.json](http://www.json.org/java/index.html) library
+
 
 Документация: http://arturus.github.com/Metrika4j/apidocs
 

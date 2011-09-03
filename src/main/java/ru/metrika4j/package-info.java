@@ -38,7 +38,7 @@
  * и {@link ru.metrika4j.json.JsonObject}<br>
  *
  * <h3>Начало работы с Metrika4j</h3>
- * Сначала необходимо создать экземпляр {@link MetrikaApi} c помощью {@link ApiFactory}
+ * Сначала необходимо создать экземпляр {@link  ru.metrika4j.MetrikaApi} c помощью {@link ru.metrika4j.ApiFactory}
  * <pre>
  *    // Создаем экземпляр API, использующий Jackson JSON-processor и транспорт по умолчанию
  *    MetrikaApi api = ApiFactory.createMetrikaAPI("05dd3dd84ff948fdae2bc4fb91f13e22", new JacksonMapper());
@@ -85,7 +85,8 @@
  * </pre>
  * <h3>Работа с отчетами</h3>
  * Набор доступных отчетов содержится в enum-e {@link ru.metrika4j.Reports}. Для построения отчета надо вызвать метод
- * {@link MetrikaApi#makeReportBuilder(Reports, int)}, который вернет объект {@link ReportBuilder} - построитель отчета.
+ * {@link ru.metrika4j.MetrikaApi#makeReportBuilder(Reports, int)}, который вернет объект {@link ru.metrika4j.ReportBuilder}
+ * - построитель отчета.
  * В построителе отчета можно задать параметры отчета (временной интервал, сортировку и т.п.). Когда все параметры будут
  * установлены, вызывайте метод {@link ru.metrika4j.ReportBuilder#build()}, который отправит запрос на сервер API
  * Метрики и вернет результат.
@@ -96,9 +97,9 @@
  *    // Задаём параметры отчета (отчет за неделю) и строим отчет
  *    Report report = builder.withDateFrom(MetrikaDate.yesterday()).withDateTo(MetrikaDate.today()).build();
  * </pre>
- * Отчет возвращается в виде объекта {@link Report}, представляющего собой таблицу с результатами, плюс некоторая
+ * Отчет возвращается в виде объекта {@link ru.metrika4j.Report}, представляющего собой таблицу с результатами, плюс некоторая
  * дополнительная информация (итоги, интервал дат, к которым относится отчет и т.п.). Каждая строка таблицы результатов -
- * объект {@link ReportItem}, данные из которого можно получить одним из методов {@code getXXX(String fieldName)}
+ * объект {@link ru.metrika4j.ReportItem}, данные из которого можно получить одним из методов {@code getXXX(String fieldName)}
  * (аналогично получению значений из JDBC ResultSet). Имена полей и возвращаемые дополнительные данные надо уточнять
  * для каждого отчета в документации на API Яндекс.Метрики
  * <pre>
