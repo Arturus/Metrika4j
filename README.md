@@ -4,12 +4,15 @@ Metrika4j -  java OOP wrapper for Yandex.Metrika API
 Java идиомы и не вникая в низкоуровневые детали обработки HTTP запросов и с XML/JSON.
 
 Поддерживаемые платформы:
+
 - JDK 5.0 и выше
 - Android API Level 3 и выше
 
 Зависимости:
+
 - Jackson JSON processor 1.8 и выше (необязательная зависимость, при использовании Jackson)
 - org.json library  (необязательная зависимость)
+
 Обязательных зависимостей нет.
 
 Общие принципы работы
