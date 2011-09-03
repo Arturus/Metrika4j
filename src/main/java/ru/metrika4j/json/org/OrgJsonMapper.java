@@ -18,7 +18,7 @@ package ru.metrika4j.json.org;
 import org.json.JSONException;
 import org.json.JSONObject;
 import ru.metrika4j.entity.Counter;
-import ru.metrika4j.error.MetrikaError;
+import ru.metrika4j.entity.MetrikaError;
 import ru.metrika4j.error.ParseException;
 import ru.metrika4j.json.JsonMapper;
 import ru.metrika4j.json.JsonObject;

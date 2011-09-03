@@ -17,7 +17,7 @@ package ru.metrika4j.error;
 
 
 /** Ошибка парсинга JSON-ответа от сервера API Метрики */
-public class ParseException extends RuntimeException {
+public class ParseException extends Metrika4jException {
     public ParseException(String message, Throwable cause) {
         super(message, cause);
     }

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-package ru.metrika4j.error;
+package ru.metrika4j.entity;
 
 
 import org.codehaus.jackson.annotate.JsonProperty;

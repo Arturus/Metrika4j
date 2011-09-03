@@ -24,7 +24,7 @@ import ru.metrika4j.Reports;
 import ru.metrika4j.entity.Counter;
 import ru.metrika4j.entity.CounterDetails;
 import ru.metrika4j.error.NoDataException;
-import ru.metrika4j.io.HttpUrlConnectionTransport;
+import ru.metrika4j.http.HttpUrlConnectionTransport;
 import ru.metrika4j.json.jackson.JacksonMapper;
 
 /** @author Artur Suilin */

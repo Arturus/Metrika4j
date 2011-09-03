@@ -15,8 +15,8 @@
 
 package ru.metrika4j.error;
 
-/** Ошибка передачи данных, возникшая при отправке/приеме данных от сервера API Метрики */
-public class TransportException extends RuntimeException {
+/** Ошибка передачи данных, на транспортном уровне (сокеты, HTTP) */
+public class TransportException extends Metrika4jException {
     public TransportException(String message) {
         super(message);
     }

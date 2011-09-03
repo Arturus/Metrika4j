@@ -24,7 +24,7 @@ import ru.metrika4j.FilterApi;
 import ru.metrika4j.GoalApi;
 import ru.metrika4j.GrantApi;
 import ru.metrika4j.entity.*;
-import ru.metrika4j.io.HttpUrlConnectionTransport;
+import ru.metrika4j.http.HttpUrlConnectionTransport;
 import ru.metrika4j.json.jackson.JacksonMapper;
 
 

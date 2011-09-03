@@ -16,6 +16,8 @@
 package ru.metrika4j.error;
 
 
+import ru.metrika4j.entity.MetrikaError;
+
 /**
  * Ошибка, возникающая при отсутствии данных в отчете
  *

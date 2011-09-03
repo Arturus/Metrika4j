@@ -48,7 +48,7 @@ public class ReportBuilderImpl implements ReportBuilder {
         return this;
     }
 
-    public ReportBuilder withGoal(int goalId) {
+    public ReportBuilder withGoal(Integer goalId) {
         if (goalId != 0) {
             pathBuilder.add("goal_id", goalId);
         }
@@ -76,8 +76,8 @@ public class ReportBuilderImpl implements ReportBuilder {
         return this;
     }
 
-    public ReportBuilder withMirrorId(int mirrorId) {
-        if (mirrorId >= 0) {
+    public ReportBuilder withMirrorId(Integer mirrorId) {
+        if (mirrorId == null || mirrorId >= 0) {
             pathBuilder.add("mirror_id", mirrorId);
         } else {
             pathBuilder.add("mirror_id", "other");
@@ -90,7 +90,7 @@ public class ReportBuilderImpl implements ReportBuilder {
         return this;
     }
 
-    public ReportBuilder withItemsPerPage(int numberOfItems) {
+    public ReportBuilder withItemsPerPage(Integer numberOfItems) {
         pathBuilder.add("per_page", numberOfItems);
         return this;
     }

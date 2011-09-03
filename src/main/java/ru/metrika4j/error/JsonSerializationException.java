@@ -20,7 +20,7 @@ package ru.metrika4j.error;
  *
  * @author Artur Suilin
  */
-public class JsonSerializationException extends RuntimeException {
+public class JsonSerializationException extends Metrika4jException {
 
     public JsonSerializationException(String message, Throwable cause) {
         super(message, cause);

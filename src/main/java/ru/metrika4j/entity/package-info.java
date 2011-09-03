@@ -13,23 +13,8 @@
  * limitations under the License.
  */
 
-package ru.metrika4j.error;
-
-
-import ru.metrika4j.entity.MetrikaError;
-
-/** Ошибка, возникшая при обработке запроса сервером API Метрики */
-public class ServerException extends Metrika4jException {
-    private final MetrikaError[] errors;
-
-    public ServerException(String src, MetrikaError[] errors) {
-        super(src);
-        this.errors = errors;
-    }
-
-
-    /** Список ошибок, которые вернул сервер Метрики */
-    public MetrikaError[] getErrors() {
-        return errors;
-    }
-}
+/**
+ * Сущности, с которыми работает Metrika4j: счетчики, цели и т.п.
+ *
+ */
+package ru.metrika4j.entity;

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-package ru.metrika4j.io;
+package ru.metrika4j.http;
 
 /**
  * Интерфейс HTTP транспорта. Возможны реализации  этого интерфейса, использующие разные HTTP библиотеки (HTTP

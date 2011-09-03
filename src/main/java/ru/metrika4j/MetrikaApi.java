@@ -58,8 +58,8 @@ public interface MetrikaApi {
      *
      * @param newCounter Объект с заполненными полями, представляющий новый счетчик
      * @return Созданный счетчик. Это объект с теми же полями, что у входного newCounter,
-     *         плюс Метрика может сама проставить
-     *         значения некоторых полей по умолчанию.
+     *         плюс поля, автоматически выставленные Метрикой
+     *         (например id).
      * @see <a href="http://api.yandex.ru/metrika/doc/ref/reference/add-counter.xml">Справочник API</a>
      */
     Counter createCounter(Counter newCounter);
@@ -69,7 +69,7 @@ public interface MetrikaApi {
      *
      * @param counter Объект с заполненными полями, представляющий счетчик, который должен быть  изменён
      * @return Измененный счетчик. Это объект с теми же полями, что у входного счетчика,
-     *         плюс Метрика может сама проставить
+     *         плюс Метрика может сама выставить
      *         значения некоторых полей по умолчанию.
      * @see <a href="http://api.yandex.ru/metrika/doc/ref/reference/edit-counter.xml">Справочник API</a>
      */

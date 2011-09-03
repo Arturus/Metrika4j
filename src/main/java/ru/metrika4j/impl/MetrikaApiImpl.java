@@ -17,11 +17,10 @@ package ru.metrika4j.impl;
 
 import ru.metrika4j.*;
 import ru.metrika4j.entity.*;
-import ru.metrika4j.error.MetrikaError;
 import ru.metrika4j.error.NoDataException;
 import ru.metrika4j.error.ServerException;
-import ru.metrika4j.io.HttpMethod;
-import ru.metrika4j.io.HttpTransport;
+import ru.metrika4j.http.HttpMethod;
+import ru.metrika4j.http.HttpTransport;
 import ru.metrika4j.json.JsonMapper;
 import ru.metrika4j.json.JsonObject;
 

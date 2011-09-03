@@ -40,7 +40,7 @@ public interface Report {
     /**
      * Возвращает идентификатор цели для целевого отчёта, или null для нецелевого отчёта
      *
-     * @see ReportBuilder#withGoal(int)
+     * @see ReportBuilder#withGoal(Integer)
      */
     Integer getGoalId();
 

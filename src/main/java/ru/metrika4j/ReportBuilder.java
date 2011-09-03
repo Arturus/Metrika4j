@@ -25,6 +25,9 @@ package ru.metrika4j;
  * произвольным именем.
  * <p>Для построения отчета после задания параметров надо вызвать метод {@link #build()}</p>
  * <p>Экземпляр построителя отчётов получается путём вызова {@link MetrikaApi#makeReportBuilder(Reports, int)}  </p>
+ * <p>Один и тот же построитель отчетов может использоваться несколько раз, с разными параметрами. Для установки
+ * нового значения параметра передайте значение в соответствующий метод {@code withXXX()}, для сброса параметра
+ * передайте в качестве значения {@code null}</p>
  *
  * @author Artur Suilin
  */
@@ -51,7 +54,7 @@ public interface ReportBuilder {
      *
      * @see ru.metrika4j.entity.Goal
      */
-    ReportBuilder withGoal(int goalId);
+    ReportBuilder withGoal(Integer goalId);
 
     /** Задаёт группировку данных по времени. Если группировка не задана, по умолчанию данные группируются по дням */
     ReportBuilder groupBy(Group group);
@@ -88,7 +91,7 @@ public interface ReportBuilder {
      *                 отрицательное число - будут выведены данные для сайтов и адресов,
      *                 не указанных в настройках счётчика.
      */
-    ReportBuilder withMirrorId(int mirrorId);
+    ReportBuilder withMirrorId(Integer mirrorId);
 
     /**
      * Задаёт входной параметр отчёта с произвольным именем.
@@ -99,11 +102,14 @@ public interface ReportBuilder {
     ReportBuilder withParameter(String name, String value);
 
     /** Задаёт количество записей на одну "страницу" отчёта */
-    ReportBuilder withItemsPerPage(int numberOfItems);
+    ReportBuilder withItemsPerPage(Integer numberOfItems);
 
     /**
      * Выполняет фактическое построение отчёта. Функция в ходе работы обращается за данными к серверам Яндекс
      * .Метрики.
+     *
+     * @throws ru.metrika4j.error.NoDataException
+     *
      */
     Report build();
 

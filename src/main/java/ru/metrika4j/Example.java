@@ -17,11 +17,15 @@ package ru.metrika4j;
 
 import ru.metrika4j.entity.Counter;
 import ru.metrika4j.entity.CounterDetails;
-import ru.metrika4j.io.HttpTransport;
-import ru.metrika4j.io.HttpUrlConnectionTransport;
+import ru.metrika4j.http.HttpTransport;
+import ru.metrika4j.http.HttpUrlConnectionTransport;
 import ru.metrika4j.json.jackson.JacksonMapper;
 
-/** @author Artur Suilin */
+/**
+ * Примеры использования Metrika4j
+ *
+ * @author Artur Suilin
+ */
 public class Example {
     public static void main(String[] args) {
         // Создаём транспорт, передав в него OAuth токен
@@ -41,12 +45,13 @@ public class Example {
         Counter newCounter = new Counter();
         newCounter.setSite("mysite.ru");
         newCounter.setName("Мой сайт");
-        //api.createCounter(newCounter);
+        //Counter createdCounter = api.createCounter(newCounter);
+        //System.out.println(createdCounter.getId());
 
         // Удаляем счетчик
-        //api.deleteCounter(newCounter.id);
+        //api.deleteCounter(createdCounter.id);
 
-        // Создаем построитель отчета "популярное содержимое" для счетчика с id=42
+        // Создаем построитель отчета "популярное содержимое" для счетчика с id=2138128
         ReportBuilder builder = api.makeReportBuilder(Reports.contentPopular, 2138128);
 
         // Задаём параметры отчета (отчет за неделю) и строим отчет

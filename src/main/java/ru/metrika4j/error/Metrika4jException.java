@@ -13,12 +13,26 @@
  * limitations under the License.
  */
 
-package ru.metrika4j.io;
+package ru.metrika4j.error;
 
-/** @author Artur Suilin */
-public enum HttpMethod {
-    GET,
-    POST,
-    PUT,
-    DELETE
+/**
+ * Базовый класс для исключений Metrika4j
+ *
+ * @author Artur Suilin
+ */
+public class Metrika4jException extends RuntimeException {
+    public Metrika4jException() {
+    }
+
+    public Metrika4jException(String message) {
+        super(message);
+    }
+
+    public Metrika4jException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public Metrika4jException(Throwable cause) {
+        super(cause);
+    }
 }

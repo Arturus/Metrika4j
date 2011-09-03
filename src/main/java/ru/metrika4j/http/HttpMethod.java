@@ -13,23 +13,12 @@
  * limitations under the License.
  */
 
-package ru.metrika4j.error;
+package ru.metrika4j.http;
 
-
-import ru.metrika4j.entity.MetrikaError;
-
-/** Ошибка, возникшая при обработке запроса сервером API Метрики */
-public class ServerException extends Metrika4jException {
-    private final MetrikaError[] errors;
-
-    public ServerException(String src, MetrikaError[] errors) {
-        super(src);
-        this.errors = errors;
-    }
-
-
-    /** Список ошибок, которые вернул сервер Метрики */
-    public MetrikaError[] getErrors() {
-        return errors;
-    }
+/** @author Artur Suilin */
+public enum HttpMethod {
+    GET,
+    POST,
+    PUT,
+    DELETE
 }

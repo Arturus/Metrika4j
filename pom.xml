@@ -23,11 +23,45 @@
     <artifactId>metrika4j</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
-    <name>Metrika4j: java wrapper for Yandex.Metrika API</name>
-    <url>http://api.yandex.ru/metrika</url>
+    <name>Metrika4j: Java wrapper for Yandex.Metrika API</name>
+    <url>https://github.com/Arturus/Metrika4j</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <licenses>
+        <license>
+            <name>Apache 2</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>arturus</id>
+            <name>Artur</name>
+            <email>asuilin@gmail.com</email>
+            <organization>Yandex</organization>
+            <organizationUrl>http://yandex.com</organizationUrl>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+            <timezone>-3</timezone>
+        </developer>
+    </developers>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/Arturus/Metrika4j/issues</url>
+    </issueManagement>
+
+    <scm>
+        <connection>scm:git:git://github.com/Arturus/Metrika4j.git</connection>
+        <developerConnection>scm:git:git@github.com:Arturus/Metrika4j.git</developerConnection>
+        <tag>master</tag>
+        <url>https://github.com/Arturus/Metrika4j</url>
+    </scm>
 
     <build>
         <plugins>

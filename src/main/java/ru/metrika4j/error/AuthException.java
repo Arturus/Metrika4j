@@ -16,7 +16,7 @@
 package ru.metrika4j.error;
 
 /** Ошибка авторизации */
-public class AuthException extends RuntimeException {
+public class AuthException extends Metrika4jException {
     public AuthException() {
     }
 }

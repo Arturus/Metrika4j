@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-package ru.metrika4j.io;
+package ru.metrika4j.http;
 
 import ru.metrika4j.error.AuthException;
 import ru.metrika4j.error.TransportException;

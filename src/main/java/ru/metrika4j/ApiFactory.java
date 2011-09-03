@@ -15,9 +15,9 @@
 
 package ru.metrika4j;
 
+import ru.metrika4j.http.HttpTransport;
+import ru.metrika4j.http.HttpUrlConnectionTransport;
 import ru.metrika4j.impl.MetrikaApiImpl;
-import ru.metrika4j.io.HttpTransport;
-import ru.metrika4j.io.HttpUrlConnectionTransport;
 import ru.metrika4j.json.JsonMapper;
 
 /**

@@ -19,7 +19,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * Представление даты в API Яндекс.Метрики. Содержит год, месяц и день, без указания времени.<br>
+ * Представление даты в API Яндекс.Метрики. Содержит год, месяц и день, без указания времени.
  *
  * @author Artur Suilin
  */
@@ -144,20 +144,6 @@ public class MetrikaDate {
     }
 
 
-    /**
-     * Возвращает разницу в днях между собственной датой и заданной датой (this - another). Разница
-     * может быть отрицательной
-     */
-
-//    public int dayIntervalTo(MetrikaDate another) {
-//        return this.getUnixDay() - another.getUnixDay();
-//    }
-//
-//    private int getUnixDay() {
-//       Calendar c = makeCalendar();
-//       long offset = c.get(Calendar.ZONE_OFFSET) + c.get(Calendar.DST_OFFSET);
-//       return (int)Math.floor( (double)(c.getTime().getTime() + offset ) / ((double) 1000 * 60 * 60 * 24L) );
-//    }
     @Override
     public boolean equals(Object o) {
         if (this == o) {
