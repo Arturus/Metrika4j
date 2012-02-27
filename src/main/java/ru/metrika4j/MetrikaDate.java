@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 Artur Suilin
+ * Copyright (C) 2012 Artur Suilin
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,6 +27,23 @@ public class MetrikaDate {
     private final int year;
     private final int month;
     private final int day;
+
+    /**
+     * All minutes have this many milliseconds except the last minute of the day on a day defined with
+     * a leap second.
+     */
+    public static final long MILLISECS_PER_MINUTE = 60 * 1000;
+
+    /** Number of milliseconds per hour, except when a leap second is inserted. */
+    public static final long MILLISECS_PER_HOUR = 60 * MILLISECS_PER_MINUTE;
+
+    /**
+     * Number of leap seconds per day expect on
+     * <BR/>1. days when a leap second has been inserted, e.g. 1999 JAN  1.
+     * <BR/>2. Daylight-savings "spring forward" or "fall back" days.
+     */
+    protected static final long MILLISECS_PER_DAY = 24 * MILLISECS_PER_HOUR;
+
 
     public MetrikaDate(int day, int month, int year) {
         this.day = day;
@@ -141,6 +158,29 @@ public class MetrikaDate {
         Calendar c = makeCalendar();
         c.add(Calendar.DAY_OF_MONTH, days);
         return new MetrikaDate(c);
+    }
+
+    public long getUnixDay() {
+        Calendar c = makeCalendar();
+        long offset = c.get(Calendar.ZONE_OFFSET) + c.get(Calendar.DST_OFFSET);
+        return (long) Math.floor((double) (c.getTime().getTime() + offset) / ((double) MILLISECS_PER_DAY));
+    }
+
+    /**
+     * find the number of days from this date to the given end date.
+     * later end dates result in positive values.
+     * Note this is not the same as subtracting day numbers.  Just after midnight subtracted from just before
+     * midnight is 0 days for this method while subtracting day numbers would yields 1 day.
+     *
+     * @param end - any date representing the moment of time at the end of the interval for calculation.
+     */
+    public long diffDayPeriods(MetrikaDate end) {
+        Calendar endCalendar = end.makeCalendar();
+        Calendar thisCalendar = this.makeCalendar();
+        long endL = endCalendar.getTimeInMillis() + endCalendar.getTimeZone().getOffset(endCalendar.getTimeInMillis());
+        long startL = thisCalendar.getTimeInMillis() + thisCalendar.getTimeZone()
+                .getOffset(thisCalendar.getTimeInMillis());
+        return (endL - startL) / MILLISECS_PER_DAY;
     }
 
 
