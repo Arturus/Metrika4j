@@ -25,7 +25,7 @@ import java.util.Date;
  */
 public class MetrikaDate {
     private final int year;
-    private final int month;
+    private final int month;  // 1-based
     private final int day;
 
     /**
@@ -105,7 +105,7 @@ public class MetrikaDate {
         int length = value.length();
         if (length == 6 || length == 8) {
             year = Integer.parseInt(value.substring(0, 4));
-            month = Integer.parseInt(value.substring(4, 6)) - 1;
+            month = Integer.parseInt(value.substring(4, 6));
             if (length == 8) {
                 day = Integer.parseInt(value.substring(6, 8));
             } else {
@@ -149,6 +149,10 @@ public class MetrikaDate {
         return c;
     }
 
+    @Override
+    public String toString() {
+        return toApiString();
+    }
 
     public Date toJavaDate() {
         return makeCalendar().getTime();
@@ -174,13 +178,14 @@ public class MetrikaDate {
      *
      * @param end - any date representing the moment of time at the end of the interval for calculation.
      */
-    public long diffDayPeriods(MetrikaDate end) {
+    public int diffDayPeriods(MetrikaDate end) {
         Calendar endCalendar = end.makeCalendar();
         Calendar thisCalendar = this.makeCalendar();
         long endL = endCalendar.getTimeInMillis() + endCalendar.getTimeZone().getOffset(endCalendar.getTimeInMillis());
         long startL = thisCalendar.getTimeInMillis() + thisCalendar.getTimeZone()
                 .getOffset(thisCalendar.getTimeInMillis());
-        return (endL - startL) / MILLISECS_PER_DAY;
+        long result = (endL - startL) / MILLISECS_PER_DAY;
+        return (int) result;
     }
 
 

@@ -21,7 +21,7 @@
 
     <groupId>ru.metrika4j</groupId>
     <artifactId>metrika4j</artifactId>
-    <version>1.1</version>
+    <version>1.2</version>
     <packaging>jar</packaging>
     <name>Metrika4j: Java wrapper for Yandex.Metrika API</name>
     <url>https://github.com/Arturus/Metrika4j</url>
